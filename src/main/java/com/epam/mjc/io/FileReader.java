@@ -3,7 +3,6 @@ package com.epam.mjc.io;
 import java.io.BufferedReader;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -15,7 +14,25 @@ public class FileReader {
     private String email;
     private long phone;
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public long getPhone() {
+        return phone;
+    }
+
     private static final Logger logger = Logger.getLogger( FileReader.class.getName());
+
+
 
     public void Profile(String name, int age, String email, long phone) {
         this.name = name;
@@ -64,14 +81,18 @@ public class FileReader {
         return dataMap;
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         try {
             File file = new File("src/main/resources/Profile.txt");
             Profile profile = getDataFromFile(file);
-            System.out.println("Name: " + profile.getName());
-            System.out.println("Age: " + profile.getAge());
-            System.out.println("Email: " + profile.getEmail());
-            System.out.println("Phone: " + profile.getPhone());
+            logger.info("Name: " + this.getName());
+            logger.info("Age: " + this.getAge());
+            logger.info("Email: " + this.getEmail());
+            logger.info("Phone: " + this.getPhone());
+           // System.out.println("Name: " + profile.getName());
+           // System.out.println("Age: " + profile.getAge());
+           // System.out.println("Email: " + profile.getEmail());
+            //System.out.println("Phone: " + profile.getPhone());
 
         } catch (Exception e) {
             logger.severe("An error occurred: " + e.getMessage());
@@ -79,7 +100,6 @@ public class FileReader {
             for (StackTraceElement element : e.getStackTrace()) {
                 logger.severe(element.toString());
             }
-
         }
     }
 }
@@ -88,9 +108,3 @@ public class FileReader {
 // рекомендуется использовать библиотеку логирования, такую как java.util.logging для записи информации в журнал.
 // Логгеры предоставляют более гибкий и настраиваемый способ управления журналированием в Java приложениях.
 
-
-//валидатор сказал удалить геттеры
-//public String getName() {return name;}
-//public int getAge() {return age;}
-//public String getEmail() {return email;}
-//public long getPhone() {return phone;}
