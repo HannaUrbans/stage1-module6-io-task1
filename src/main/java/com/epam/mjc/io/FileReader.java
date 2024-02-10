@@ -81,18 +81,15 @@ public class FileReader {
         return dataMap;
     }
 
-    public void main(String[] args) {
+    public void main() {
         try {
             File file = new File("src/main/resources/Profile.txt");
-            Profile profile = getDataFromFile(file);
+            getDataFromFile(file);
             logger.info("Name: " + this.getName());
             logger.info("Age: " + this.getAge());
             logger.info("Email: " + this.getEmail());
             logger.info("Phone: " + this.getPhone());
-           // System.out.println("Name: " + profile.getName());
-           // System.out.println("Age: " + profile.getAge());
-           // System.out.println("Email: " + profile.getEmail());
-            //System.out.println("Phone: " + profile.getPhone());
+
 
         } catch (Exception e) {
             logger.severe("An error occurred: " + e.getMessage());
