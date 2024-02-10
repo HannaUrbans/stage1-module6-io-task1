@@ -1,13 +1,7 @@
 package com.epam.mjc.io;
 
-import java.io.*;
-import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.Map;
 
-import static java.lang.System.in;
-import static java.lang.System.out;
+import java.util.Objects;
 
 
 public class Profile {
@@ -92,3 +86,5 @@ public class Profile {
     }
 
    }
+
+
