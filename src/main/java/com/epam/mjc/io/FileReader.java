@@ -32,16 +32,7 @@ public class FileReader {
 
     private static final Logger logger = Logger.getLogger( FileReader.class.getName());
 
-
-
-    public void Profile(String name, int age, String email, long phone) {
-        this.name = name;
-        this.age = age;
-        this.email = email;
-        this.phone = phone;
-    }
-
-    public static Profile getDataFromFile(File file) {
+       public static Profile getDataFromFile(File file) {
         String fileData = readFileData(file);
         Map<String, String> dataMap = parseData(fileData);
 
